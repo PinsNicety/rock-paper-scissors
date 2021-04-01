@@ -1,3 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+h1 {
+    font-size: 45px;
+    color: white;
+}
+
+p {
+    font-size: 25px;
+    color: sienna;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -5,41 +21,68 @@
     align-items: center;
     height: 100vh;
     width: 100%;
+    background-color: rgb(141, 154, 230);
+}
+
+#title {
+    justify-content: space-around;
 }
 
 .body-part { 
     display: flex;
     width: 100%;
+    height: 33%;
+    justify-content: space-around;
+    align-items: center;
 }
 
-#title {
-    background-color: aqua;
-    justify-content: space-around;
+#game {
+    width: 75%;
+    height: 600px;
+    background-color: white;
+    border-radius: 25px;
+    position: relative;
+}
+
+#round-number {
+    position: absolute;
+    left: 20px;
+    top: -15px;
 }
 
 #choices {
-    justify-content: space-around;
-    background-color: green;
-    width: 100%;
     position: relative;
-    padding-bottom: 5px;;
+    border-radius: 25px 25px 0 0;
 }
 
 #choices:after {
     content: "";
     position: absolute;
-    height: 3px;
+    height: 2px;
     background-color: black;
     bottom: 0;
-    width: 100%
+    width: 100%;
 }
 
-#round {
-    justify-content: space-around;
-    background-color: blueviolet;
+#choices button {
+    width: 250px;
+    height: 75px;
+    background-color: rgb(141, 154, 230);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+#choices button:hover {
+    font-weight: bold;
+    border: black 2px solid;
+}
+
+#choices button:active {
+    color: sienna;
 }
 
 #scores {
-    justify-content: space-around;
-    background-color: orangered;
+    border-radius: 0 0 25px 25px;
 }

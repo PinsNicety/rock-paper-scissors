@@ -46,6 +46,16 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    roundNumber = 0;
+    setWinner.textContent = 'Round Winner: ';
+    setPlayerScore.textContent = `Player Score: ${ playerScore }`;
+    setComputerScore.textContent = `Computer Score: ${ computerScore }`;
+    setRound.textContent = `Round #${ roundNumber }`;
+};
+
 // alert a winner
 function finalScore () {
     if (playerScore > computerScore) {
@@ -55,8 +65,9 @@ function finalScore () {
     } else {
         message = `You tied ${ playerScore } - ${ computerScore }`;
     }
+    resetGame();
     return message
-}
+};
 
 // set  selectors
 const setRound = document.querySelector('#round-number');
@@ -73,7 +84,7 @@ buttons.forEach((button) => {
         setWinner.textContent = `Round Winner: ${ winner }`;
         setPlayerScore.textContent = `Player Score: ${ playerScore }`;
         setComputerScore.textContent = `Computer Score: ${ computerScore }`;
-        setRound.textContent = `Round ${ roundNumber }`;
+        setRound.textContent = `Round #${ roundNumber }`;
     });
 });
 
