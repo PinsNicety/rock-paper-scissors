@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.body-part { 
+    display: flex;
+    width: 100%;
+}
+
+#title {
+    background-color: aqua;
+    justify-content: space-around;
+}
+
+#choices {
+    justify-content: space-around;
+    background-color: green;
+    width: 100%;
+    position: relative;
+    padding-bottom: 5px;;
+}
+
+#choices:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: black;
+    bottom: 0;
+    width: 100%
+}
+
+#round {
+    justify-content: space-around;
+    background-color: blueviolet;
+}
+
+#scores {
+    justify-content: space-around;
+    background-color: orangered;
+}
