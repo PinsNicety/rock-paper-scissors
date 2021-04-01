@@ -20,7 +20,6 @@ function playRound(playerSelection, computerSelection) {
                 case 'scissors': 
                     playerScore++;
                     return 'player';
-                default: return 'TIE';
             }
         case 'scissors':
             switch (computerSelection) {
@@ -30,7 +29,6 @@ function playRound(playerSelection, computerSelection) {
                 case 'paper': 
                     playerScore++;
                     return 'player';
-                default: return 'TIE';
             }
         case 'paper':
             switch (computerSelection) {
@@ -40,10 +38,9 @@ function playRound(playerSelection, computerSelection) {
                 case 'scissors': 
                     computerScore++;
                     return 'comp';
-                default: return 'TIE';
             }
-
     }
+    return 'TIE';
 }
 
 function resetGame() {
@@ -58,13 +55,8 @@ function resetGame() {
 
 // alert a winner
 function finalScore () {
-    if (playerScore > computerScore) {
-        message = `You win ${ playerScore } - ${ computerScore }`;
-    } else if (playerScore < computerScore) {
-        message = `You lose ${ playerScore } - ${ computerScore }`;
-    } else {
-        message = `You tied ${ playerScore } - ${ computerScore }`;
-    }
+    if (playerScore > computerScore) message = `You win ${ playerScore } - ${ computerScore }`;
+    else message = `You lose ${ playerScore } - ${ computerScore }`;
     resetGame();
     return message
 };
