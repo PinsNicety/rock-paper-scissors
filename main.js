@@ -16,28 +16,28 @@ function playRound(playerSelection, computerSelection) {
             switch (computerSelection) {
                 case 'paper': 
                     computerScore++;
-                    return 'comp';
+                    return 'Computer';
                 case 'scissors': 
                     playerScore++;
-                    return 'player';
+                    return 'Player';
             }
         case 'scissors':
             switch (computerSelection) {
                 case 'rock': 
                     computerScore++;
-                    return 'comp';
+                    return 'Computer';
                 case 'paper': 
                     playerScore++;
-                    return 'player';
+                    return 'Player';
             }
         case 'paper':
             switch (computerSelection) {
                 case 'rock': 
                     playerScore++;
-                    return 'player';
+                    return 'Player';
                 case 'scissors': 
                     computerScore++;
-                    return 'comp';
+                    return 'Computer';
             }
     }
     return 'TIE';
@@ -72,11 +72,11 @@ const buttons = document.querySelectorAll('.choice-btn');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         let winner = playRound(e.target.id, computerSelection())
-        if (playerScore === 5 || computerScore === 5) alert(finalScore());
         setWinner.textContent = `Round Winner: ${ winner }`;
         setPlayerScore.textContent = `Player Score: ${ playerScore }`;
         setComputerScore.textContent = `Computer Score: ${ computerScore }`;
         setRound.textContent = `Round #${ roundNumber }`;
+        if (playerScore === 5 || computerScore === 5) alert(finalScore());
     });
 });
 
